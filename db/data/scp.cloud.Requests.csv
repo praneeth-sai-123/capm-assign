@@ -1,0 +1,3 @@
+RequestID,RequestType_code,RequestorEmail,FirstName,LastName,GlobalRegion_code,BusinessUnit,Function,Country_code,ExpectedDueDate,Priority_code,CreatedOnDate,Comments
+REQ12345678,Create,johndoe@example.com,John,Doe,US,Finance,Accounting,US,2022-12-31,1,2022-11-25,"This is a high priority research request related to the upcoming project."
+REQ87654321,Change,janedoe@example.com,Jane,Doe,APAC,IT,Software Development,UK,2023-01-15,2,2022-12-01,"Looking for a consultation on the new software project."

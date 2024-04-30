@@ -1,0 +1,48 @@
+{
+    "name": "capm_assignment1",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap-cloud-sdk/http-client": "^3.14.0",
+        "@sap-cloud-sdk/resilience": "^3.14.0",
+        "@sap/cds": "^7",
+        "@sap/cds-hana": "^2",
+        "@sap/xssec": "^3",
+        "express": "^4"
+    },
+    "devDependencies": {
+        "@cap-js/sqlite": "^1",
+        "@sap/cds-dk": "^7",
+        "@sap/ux-specification": "^1.120.9",
+        "rimraf": "^3.0.2"
+    },
+    "scripts": {
+        "start": "cds-serve",
+        "watch-capm_assign_fiori": "cds watch --open capm_assign_fiori/webapp/index.html?sap-ui-xx-viewCache=false",
+        "undeploy": "cf undeploy capm_assignment1 --delete-services --delete-service-keys --delete-service-brokers",
+        "build": "rimraf resources mta_archives && mbt build --mtar archive",
+        "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+    },
+    "cds": {
+        "requires": {
+            "salesorder": {
+                "kind": "odata-v2",
+                "model": "srv/external/salesorder",
+                "credentials": {
+                    "url": "https://sandbox.api.sap.com/sap/c4c/odata/v1/c4codataapi",
+                    "headers": {
+                        "APIKey": "hoFicLGgpYwQyJJrNFXSLassl2dFrsKA",
+                        "DataServiceVersion": "2.0",
+                        "Accept": "application/json"
+                    }
+                }
+            }
+        }
+    },
+    "sapux": [
+        "app/capm_assign_fiori"
+    ]
+}
