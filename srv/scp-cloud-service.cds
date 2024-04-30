@@ -8,5 +8,5 @@ service ScpCloudService {
 	@readonly entity Regions as projection on my.Regions;
 	@readonly entity Priorities as projection on my.Priorities;
 	@readonly entity CountryCodes as projection on my.CountryCodes;
-	@readonly entity salesorder as projection on sales.CustomerOrderItemPartyCollection;
+	@readonly entity salesorder as projection on sales.CustomerOrderCollection;
 }
