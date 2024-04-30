@@ -37,6 +37,7 @@ class ScpCloudService extends cds.ApplicationService{
             const results = await tx.run(req.query);
             return results;
         });
+        console.log("At end of INIT")
 
     }
 }
